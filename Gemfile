@@ -14,6 +14,8 @@ gem 'jbuilder',     '2.4.1'
 gem 'bootstrap-sass'
 
 gem 'bcrypt'
+gem 'faker', '1.4.2'
+gem 'kaminari'
 
 group :development, :test do
   gem 'sqlite3', '1.3.12'
