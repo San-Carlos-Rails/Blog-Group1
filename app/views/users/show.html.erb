@@ -8,7 +8,7 @@
             <div class="card-content white-text">
               <span class="card-title center-align"><%= @user.name %></span>
             </div>
-            <div class="card-action">
+            <div class="card-action center-align">
               <%= render 'shared/stats' %>
             </div>
         </div>
@@ -20,7 +20,9 @@
 		<ol class="microposts">
 			<%= render @microposts %>
 		</ol>
-		<%= will_paginate @microposts %>
+		<div class="center-align">
+			<%= will_paginate @microposts %>
+		</div>
 		<% end %>
 	</div>
 </div>
