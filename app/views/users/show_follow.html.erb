@@ -1,14 +1,23 @@
 <% provide(:title, @title) %>
 <div class="row">
     <aside class="col-md-4">
-        <section class="user_info">
-            <%= gravatar_for @user %>
-            <h1><%= @user.name %></h1>
-            <span><%= link_to "view my profile", @user %></span>
-            <span><b>Microposts:</b> <%= @user.microposts.count %></span>
-        </section>
-        <section class="stats">
-            <%= render 'shared/stats' %>
+        <div class="card blue-grey darken-1" id="user-card">
+			<div class="card-image">
+              <%= gravatar_for @user %>
+            </div>
+            <div class="card-content white-text center-align">
+              <span class="card-title"><%= @user.name %></span>
+              <span><b>Microposts:</b> <%= @user.microposts.count %></span>
+		  	  </br></br>
+			  <span><%= link_to "VIEW PROFILE", @user %></span>
+            </div>
+            <div class="card-action center-align">
+                <%= render 'shared/stats' %>
+            </div>
+        </div>
+        </br>
+        <div class="col s1"></div>
+        <div class="col s10">
             <% if @users.any? %>
                 <div class="user_avatars">
                     <% @users.each do |user| %>
@@ -16,15 +25,17 @@
                     <% end %>
                 </div>
             <% end %>
-        </section>
+        </div>
     </aside>
     <div class="col-md-8">
-        <h3><%= @title %></h3>
+        <blockquote><h4><%= @title %></h4></blockquote>
         <% if @users.any? %>
             <ul class="users follow">
                 <%= render @users %>
             </ul>
-            <%= will_paginate %>
+            <div class="center-align">
+                <%= will_paginate %>
+            </div>
         <% end %>
     </div>
 </div>

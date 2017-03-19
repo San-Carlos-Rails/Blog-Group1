@@ -5,29 +5,79 @@
 				<section class="user_info">
 					<%= render 'shared/user_info' %>
 				</section>
-				<section class="stats">
-					<%= render 'shared/stats' %>
-				</section>
 				<section class="micropost_form">
 					<%= render 'shared/micropost_form' %>
 				</section>
 			</aside>
 			<div class="col-md-8">
-				<h3>Micropost Feed</h3>
+				<blockquote><h4>MICROPOST FEED</h4></blockquote>
 				<%= render 'shared/feed' %>
 			</div>
 		</div>
 	</div>
 <% else %>
-	<div class="center jumbotron">
-		<h1>Welcome to the Sample App</h1>
-		<h2>
-		This is the home page for the
-		<a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-		sample application.
-		</h2>
-		<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-	</div>
-	<%= link_to image_tag("rails.png", alt: "Rails logo"),
-	'http://rubyonrails.org/' %>
+	<div id="index-banner" class="parallax-container">
+	    <div class="section no-pad-bot">
+	      <div class="container">
+	        <br><br>
+	        <strong><h1 class="header center white-text text-lighten-2">ASTRONUT</h1></strong>
+	        <div class="row center">
+	          <h5 class="header col s12 light white-text">Where blogging takes you to a whole other galaxy</h5>
+	        </div>
+	        <div class="row center">
+	          <a href="<%= login_path %>" class="btn-large waves-effect waves-light teal lighten-1">Start blogging</a>
+	        </div>
+	        <br><br>
+	      </div>
+	    </div>
+	    <%= image_tag "parallel.png", class: "parallax" %>
+	  </div>
+
+
+	  <div class="container">
+	    <div class="section">
+	      <!--   Icon Section   -->
+	      <div class="row">
+	        <div class="col s12 m4">
+	          <div class="icon-block">
+	            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+	            <h5 class="center">Allows easy customization</h5>
+	            <p class="light">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+	          </div>
+	        </div>
+
+	        <div class="col s12 m4">
+	          <div class="icon-block">
+	            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+	            <h5 class="center">Provides follow and unfollow feature</h5>
+	            <p class="light">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+	          </div>
+	        </div>
+
+	        <div class="col s12 m4">
+	          <div class="icon-block">
+	            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+	            <h5 class="center">Shows you the future</h5>
+	            <p class="light">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+	          </div>
+	        </div>
+	      </div>
+
+	    </div>
+	  </div>
+
+
+	  <div class="parallax-container valign-wrapper center-align" id="parallax-two">
+	    <div class="section no-pad-bot">
+	      <div class="container">
+	        <div class="row center">
+	          <h5 class="header col s12 light white-text">Connect with peers</h5>
+			  <h5 class="header col s12 light white-text">Share your thoughts</h5>
+			  <h5 class="header col s12 light white-text">Discover new possibilities</h5>
+	        </div>
+	      </div>
+	    </div>
+	    <%= image_tag "space.gif", class: "img" %>
+	  </div>
+
 <% end %>

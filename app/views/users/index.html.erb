@@ -1,18 +1,19 @@
-<% provide(:title, 'All users') %>
-<h1>All users</h1>
-
-<%= will_paginate %>
-
-<ul class="users">
-    <table>
-      <%= render @users %>
-    </table>  
-</ul>
-
-<%= will_paginate %>
-
-<style>
-  .gravatar{
-        margin-top: 20px;
-  }
-</style>
+<% provide(:title, 'All Users') %>
+</br>
+<h3 class="center-align">ALL USERS</h3>
+<div class="row">
+    <div class="col s3"></div>
+    <%= will_paginate %>
+</div>
+<div class="row">
+    <div class="col s3"></div>
+    <div class="col s6 users">
+        <table class="bordered">
+          <%= render @users %>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col s3"></div>
+    <%= will_paginate %>
+</div>

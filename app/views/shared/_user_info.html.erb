@@ -1,4 +1,18 @@
-<%= link_to gravatar_for(current_user, size: 50), current_user %>
-<h1><%= current_user.name %></h1>
-<span><%= link_to "view my profile", current_user %></span>
-<span><%= pluralize(current_user.microposts.count, "micropost") %></span>
+<div class="row">
+	<aside class="col s12">
+		<div class="card blue-grey darken-1" id="user-card">
+			<div class="card-image">
+              <%= link_to gravatar_for(current_user), current_user %>
+            </div>
+            <div class="card-content white-text center-align">
+              <span class="card-title"><%= current_user.name %></span>
+              <span><%= pluralize(current_user.microposts.count, "micropost") %></span>
+		  	  </br>
+			  <span><%= link_to "VIEW PROFILE", current_user %></span>
+            </div>
+            <div class="card-action center-align">
+				<%= render 'shared/stats' %>
+            </div>
+        </div>
+	</aside>
+</div>

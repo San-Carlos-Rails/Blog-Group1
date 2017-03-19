@@ -1,22 +1,41 @@
 <% provide(:title, "Edit user") %>
-<h1>Update your profile</h1>
+</br>
+<h3 class="center-align">PROFILE EDIT</h3>
 <div class="row">
-	<div class="col-md-6 col-md-offset-3">
+	<div class="col s4"></div>
+	<div class="col s4 gravatar_edit">
+		<div class="card horizontal">
+		  <div class="card-image">
+			<%= gravatar_for @user %>
+		  </div>
+		  <div class="card-stacked">
+			<div class="card-content">
+				<center>
+					<a class="waves-effect waves-light" href="http://gravatar.com/emails">
+						<i class="material-icons left">cloud</i>
+					CHANGE IMAGE</a>
+				</center>
+			</div>
+		  </div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col s3"></div>
+	<div class="col s6 card medium">
+		</br></br></br>
 		<%= form_for(@user) do |f| %>
 			<%= render 'shared/error_messages', object: f.object %>
+			<%= f.text_field :name, class: 'validate' %>
 			<%= f.label :name %>
-			<%= f.text_field :name, class: 'form-control' %>
+			<%= f.email_field :email, class: 'validate' %>
 			<%= f.label :email %>
-			<%= f.email_field :email, class: 'form-control' %>
+			<%= f.password_field :password, class: 'validate' %>
 			<%= f.label :password %>
-			<%= f.password_field :password, class: 'form-control' %>
+			<%= f.password_field :password_confirmation, class: 'validate' %>
 			<%= f.label :password_confirmation, "Confirmation" %>
-			<%= f.password_field :password_confirmation, class: 'form-control' %>
-			<%= f.submit "Save changes", class: "btn btn-primary" %>
+		</br>
+		<%= f.submit "Save changes", class: "btn btn-primary" %>
 		<% end %>
-		<div class="gravatar_edit">
-			<%= gravatar_for @user %>
-			<a href="http://gravatar.com/emails">change</a>
-		</div>
 	</div>
 </div>
